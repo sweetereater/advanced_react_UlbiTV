@@ -1,17 +1,15 @@
 import { type Configuration } from 'webpack';
 
+import { createDevServer } from './createDevServer';
 import { createLoaders } from "./createLoaders";
 import { createPlugins } from "./createPlugins";
 import { createResolvers } from "./createResolvers";
 import { BuildConfig } from './types/configTypes';
-import { createDevServer } from './createDevServer';
 
 
 export function createWebpackConfig(config: BuildConfig): Configuration {
 
-  const { mode, paths } = config;
-  const isDev = mode === 'development';
-
+  const { mode, isDev, paths } = config;
 
   return {
     mode,
@@ -29,7 +27,7 @@ export function createWebpackConfig(config: BuildConfig): Configuration {
     },
 
     module: {
-      rules: createLoaders(),
+      rules: createLoaders(config),
     },
     
     resolve: createResolvers(),

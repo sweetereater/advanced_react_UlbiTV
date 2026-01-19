@@ -13,6 +13,7 @@ export interface BuildPaths {
 
 export interface BuildConfig {
   mode: BuildMode,
+  isDev: boolean,
   paths: BuildPaths,
   port: number
 }

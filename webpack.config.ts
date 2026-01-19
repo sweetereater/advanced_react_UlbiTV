@@ -1,14 +1,22 @@
 import path from 'path';
 import { createWebpackConfig } from './configuration/createWebpackConfig';
+import { BuildEnvOptions } from './configuration/types/configTypes';
 
-const config = createWebpackConfig({
-  mode: 'production',
-  paths: {
-    entry: path.resolve(__dirname, 'src', 'index.ts'),
-    build: path.resolve(__dirname, 'build'),
-    public: path.resolve(__dirname, 'public', 'index.html'),
-  },
-  port: 3000,
-});
+export default (env: BuildEnvOptions) => {
 
-export default config;
+  const mode = env.mode || 'development';
+  const port = env.port || 3000;
+
+  const config = createWebpackConfig({
+    mode,
+    paths: {
+      entry: path.resolve(__dirname, 'src', 'index.ts'),
+      build: path.resolve(__dirname, 'build'),
+      public: path.resolve(__dirname, 'public', 'index.html'),
+    },
+    port,
+  });
+
+  return config;
+  
+};

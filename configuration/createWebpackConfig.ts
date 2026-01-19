@@ -10,11 +10,13 @@ import { createDevServer } from './createDevServer';
 export function createWebpackConfig(config: BuildConfig): Configuration {
 
   const { mode, paths } = config;
+  const isDev = mode === 'development';
+
 
   return {
     mode,
 
-    devtool: 'inline-source-map',
+    devtool: isDev ? 'inline-source-map' : undefined,
 
     devServer: createDevServer(config),
 

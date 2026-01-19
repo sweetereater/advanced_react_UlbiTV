@@ -9,14 +9,14 @@ export default (env: BuildEnvOptions) => {
 
   const config = createWebpackConfig({
     mode,
+    port,
     paths: {
-      entry: path.resolve(__dirname, 'src', 'index.ts'),
+      entry: path.resolve(__dirname, 'src', 'index.tsx'),
       build: path.resolve(__dirname, 'build'),
       public: path.resolve(__dirname, 'public', 'index.html'),
     },
-    port,
   });
 
   return config;
-  
+
 };

@@ -9,6 +9,7 @@ export function createDevServer(options: BuildConfig): DevServerConfiguration {
   return {
     open: true,
     port,
+    historyApiFallback: true,
     client: {
       overlay: {
         errors: true,

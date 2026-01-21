@@ -1,9 +1,12 @@
+import { lazy, Suspense } from "react"
 import { Link, Route, Routes } from "react-router-dom"
-import { Counter } from "./components/Counter/Counter"
-import Home from "./pages/Home/Home"
-import AboutPage from "./pages/About/AboutPage"
+
+import HomePageAsync from "./pages/Home/HomePageAsync"
+import AboutPageAsync from "./pages/About/AboutPageAsync"
 
 import './index.scss'
+
+const Counter = lazy(() => import('./components/Counter/Counter'));
 
 export const App = () => {
   return (
@@ -11,13 +14,16 @@ export const App = () => {
       
       <Link to="/">Главная</Link>
       <Link to="/about">О нас</Link>
+      <Link to="/counter">К счётчику!</Link>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutPage />} />
-      </Routes>
+      <Suspense fallback="Загрузка...">
+        <Routes>
+          <Route path="/" element={<HomePageAsync />} />
+          <Route path="/about" element={<AboutPageAsync />} />
+          <Route path="/counter" element={<Counter />} />
+        </Routes>
+      </Suspense>
 
-      <Counter />
     </div>
   )
 }

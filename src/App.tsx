@@ -4,6 +4,7 @@ import { Link, Route, Routes } from "react-router-dom"
 import HomePageAsync from "./pages/Home/HomePageAsync"
 import AboutPageAsync from "./pages/About/AboutPageAsync"
 import useTheme from "./theme/useTheme"
+import classNames from "./helpers/classNames"
 
 import './index.scss'
 
@@ -14,8 +15,10 @@ const App = () => {
 
   const { theme, toggleTheme } = useTheme();
 
+  const appStyles = classNames('app', [theme, 'foo1', 'foo2'], { hovered: true, bordered: false })
+
   return (
-    <div className={`app ${theme}`}>
+    <div className={appStyles}>
       
       <Link to="/">Главная</Link>
       <Link to="/about">О нас</Link>

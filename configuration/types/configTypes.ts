@@ -9,6 +9,7 @@ export interface BuildPaths {
   entry: string
   build: string
   public: string
+  src: string
 }
 
 export interface BuildConfig {

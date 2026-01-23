@@ -30,7 +30,7 @@ export function createWebpackConfig(config: BuildConfig): Configuration {
       rules: createLoaders(config),
     },
     
-    resolve: createResolvers(),
+    resolve: createResolvers(config),
 
     plugins: createPlugins(config),
   }

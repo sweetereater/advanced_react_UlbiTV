@@ -1,7 +1,7 @@
 
 type Mods = Record<string, boolean>
 
-function classNames(mainCls: string, additional: string[], modificationsObject: Mods) {
+function classNames(mainCls: string, additional: string[], modificationsObject?: Mods) {
   return [
     mainCls,
     ...additional,

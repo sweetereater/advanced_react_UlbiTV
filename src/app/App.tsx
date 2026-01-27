@@ -1,10 +1,9 @@
 import { Suspense } from "react"
-import { Link, Route, Routes } from "react-router-dom"
+import { Link } from "react-router-dom"
 
-import { AboutPage } from "pages/About"
-import { HomePage } from "pages/Home"
 import { classNames } from "shared/lib"
 import useTheme from "./theme/lib/useTheme"
+import AppRouter from "./routes"
 
 import './styles/index.scss';
 
@@ -20,15 +19,11 @@ const App = () => {
       
       <Link to="/">Главная</Link>
       <Link to="/about">О нас</Link>
-      <Link to="/counter">К счётчику!</Link>
 
-      <button onClick={toggleTheme} >Сменить тему</button>
+      <button onClick={toggleTheme}> Сменить тему </button>
 
       <Suspense fallback="Загрузка...">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-        </Routes>
+        <AppRouter />
       </Suspense>
 
     </div>

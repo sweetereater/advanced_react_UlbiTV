@@ -1,0 +1,13 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  padding: 0.5rem;
+  background-color: var(--inverted-bg-color);
+}
+
+.navbarLinks {
+  display: flex;
+  gap: 0.5rem;
+}

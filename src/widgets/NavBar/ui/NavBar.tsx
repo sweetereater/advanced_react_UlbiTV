@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom"
-
+import useTheme from "app/theme/lib/useTheme";
 import { AppRoutesPaths } from "shared/config/routesConfig"
 import { classNames } from "shared/lib"
-import useTheme from "app/theme/lib/useTheme";
+import { AppLink, AppLinkTheme } from "shared/ui";
 
 import styles from './NavBar.module.scss';
 
@@ -17,8 +16,8 @@ const NavBar = ({ className }: NavBarProps) => {
   return (
     <div className={classNames(styles.navbar, [className])}>
       <div className={styles.navbarLinks}>
-        <Link to={AppRoutesPaths.main}>Главная</Link>
-        <Link to={AppRoutesPaths.about}>О нас</Link>
+        <AppLink to={AppRoutesPaths.main}>Главная</AppLink>
+        <AppLink to={AppRoutesPaths.about} theme={AppLinkTheme.SECONDARY}>О нас</AppLink>
       </div>
 
       <button onClick={toggleTheme}> Сменить тему </button>

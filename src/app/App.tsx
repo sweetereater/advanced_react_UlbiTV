@@ -1,9 +1,9 @@
 import { Suspense } from "react"
 
 import { classNames } from "shared/lib"
+import { NavBar } from "widgets";
 import useTheme from "./theme/lib/useTheme"
 import AppRouter from "./routes"
-import { NavBar } from "widgets/NavBar"
 
 import './styles/index.scss';
 

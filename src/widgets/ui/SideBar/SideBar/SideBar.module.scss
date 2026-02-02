@@ -1,0 +1,14 @@
+.SideBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5em;
+  height: calc(100vh - var(--header-height));
+  width: var(--sidebar-width);
+  background-color: var(--sidebar-bg-color);
+  transition: width 0.5s;
+}
+
+.closed {
+  width: var(--sidebar-width-closed);
+}

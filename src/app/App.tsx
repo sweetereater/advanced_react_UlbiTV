@@ -1,7 +1,7 @@
 import { Suspense } from "react"
 
 import { classNames } from "shared/lib"
-import { NavBar } from "widgets";
+import { NavBar, SideBar } from "widgets/ui";
 import useTheme from "./theme/lib/useTheme"
 import AppRouter from "./routes"
 
@@ -17,10 +17,16 @@ const App = () => {
   return (
     <div className={appStyles}>
       <NavBar />
+      
+      <div className="main">
+        <SideBar />
+        <div className="content">
+          <Suspense fallback="Загрузка...">
+            <AppRouter />
+          </Suspense>
+        </div>
+      </div>
 
-      <Suspense fallback="Загрузка...">
-        <AppRouter />
-      </Suspense>
     </div>
   )
 }

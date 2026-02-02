@@ -6,6 +6,7 @@ import { SideBar } from "widgets/SideBar";
 import useTheme from "./theme/lib/useTheme"
 import AppRouter from "./routes"
 
+import 'shared/config/i18nConfig';
 import './styles/index.scss';
 
 
@@ -17,17 +18,17 @@ const App = () => {
 
   return (
     <div className={appStyles}>
-      <NavBar />
-      
-      <div className="main">
-        <SideBar />
-        <div className="content">
-          <Suspense fallback="Загрузка...">
-            <AppRouter />
-          </Suspense>
+      <Suspense fallback="Загрузка...">
+        <NavBar />
+        
+        <div className="main">
+          <SideBar />
+          <div className="content">
+              <AppRouter />
+          </div>
         </div>
-      </div>
-
+        
+      </Suspense>
     </div>
   )
 }

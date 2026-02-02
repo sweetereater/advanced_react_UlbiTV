@@ -1,7 +1,7 @@
 import { Theme, useTheme } from "app";
 import DarkTheme from "shared/assets/icons/dark_theme.svg";
 import LightTheme from "shared/assets/icons/light_theme.svg";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { Button, ButtonTheme } from "shared/ui";
 import { classNames } from "shared/lib";
 
 import styles from './ThemeSwitcher.module.scss';

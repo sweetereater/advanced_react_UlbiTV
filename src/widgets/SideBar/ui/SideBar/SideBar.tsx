@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { classNames } from "shared/lib"
+import { Button } from "shared/ui";
 
 import styles from './SideBar.module.scss';
-import { Button } from "shared/ui/Button/Button";
 
 
 interface SideBarProps {

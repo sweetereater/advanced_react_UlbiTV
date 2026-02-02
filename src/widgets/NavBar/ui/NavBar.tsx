@@ -1,7 +1,7 @@
 import { AppRoutesPaths } from "shared/config/routesConfig"
 import { classNames } from "shared/lib"
 import { AppLink, AppLinkTheme } from "shared/ui";
-import { ThemeSwitcher } from "../ThemeSwitcher/ThemeSwitcher";
+import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 
 import styles from './NavBar.module.scss';
 
@@ -18,6 +18,7 @@ const NavBar = ({ className }: NavBarProps) => {
         <AppLink to={AppRoutesPaths.about} theme={AppLinkTheme.SECONDARY}>О нас</AppLink>
       </div>
       
+      {/* Проблемное место, так как ThemeSwitcher - виджет, как и NavBar, нельзя использовать на одном слое */}
       <ThemeSwitcher />
     </div>
   )
